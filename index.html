@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester les paiements PayPal en mode Sandbox</title>
+</head>
+<body>
+    <h1>Payer votre cotisation annuelle (TEST Sandbox)</h1>
+    <p>Le montant de la cotisation est de 2000000 FCFA.</p>
+
+    <!-- Formulaire PayPal Sandbox -->
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <!-- Commande pour un paiement unique -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Adresse e-mail du compte Business sandbox -->
+        <input type="hidden" name="business" value="sb-hazpc32621911@personal.example.com">
+        
+        <!-- Nom du produit ou service -->
+        <input type="hidden" name="item_name" value="Cotisation annuelle">
+        
+        <!-- Montant du paiement -->
+        <input type="hidden" name="amount" value="50.00">
+        
+        <!-- Devise -->
+        <input type="hidden" name="currency_code" value="EUR">
+        
+        <!-- URL de retour après paiement réussi -->
+        <input type="hidden" name="return" value="https://votre-site.com/merci">
+        
+        <!-- URL en cas d'annulation du paiement -->
+        <input type="hidden" name="cancel_return" value="https://votre-site.com/annuler">
+        
+        <!-- URL pour les notifications instantanées (optionnel, si vous utilisez PayPal IPN) -->
+        <input type="hidden" name="notify_url" value="https://votre-site.com/ipn">
+        
+        <!-- Bouton PayPal -->
+        <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" border="0" name="submit" alt="Payez avec PayPal Sandbox">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+</body>
+</html>
